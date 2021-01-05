@@ -5,7 +5,7 @@ const REGEX_PATTERN_FOR_JS_FILE_PATH = /\/(.+\.js)\:/;
  * Returns the filepath, if found, else 'filepath not found'
  *
  * @param {string} errorString - The error stack string
- * @return {string} the filepath or 'filepath not found'
+ * @returns {string} the filepath or 'filepath not found'
  */
 function getFilePathFromError(errorString) {
   /** See cheatsheet at https://regexr.com/
@@ -52,7 +52,7 @@ console.log(filenameUsingRegexMatch);
  * Returns boolean for whether or not the string is found
  *
  * @param {string} errorString - The error stack string
- * @return {boolean}
+ * @returns {boolean}
  */
 function isFilePathFound(errorString) {
   // pattern.test returns boolean for whether or not the pattern is found in the string argument
