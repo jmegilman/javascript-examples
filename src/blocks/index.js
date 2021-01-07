@@ -1,12 +1,12 @@
 // Block scopes
 {
-  something = "something"; // assigned to the global scope
+  something = "something"; // defined in the global scope
   console.log(something); // something
 }
 console.log(something); // something
 
 {
-  var someVar = "someVar"; // assigned to the global scope
+  var someVar = "someVar"; // defined in the global scope
   console.log(someVar); // someVar
 }
 console.log(someVar); // someVar
@@ -15,13 +15,21 @@ console.log(someVar); // someVar
   const someConst = "someConst";
   console.log(someConst); // someConst
 }
-console.log(someConst); // Reference Error: someConst is not defined
+try {
+  console.log(someConst);
+} catch (err) {
+  console.log(err); // Reference Error: someConst is not defined
+}
 
 {
   let someLet = "someLet";
   console.log(someLet); // someLet
 }
-console.log(someLet); // Reference Error: someLet is not defined
+try {
+  console.log(someLet);
+} catch (err) {
+  console.log(err); // Reference Error: someLet is not defined
+}
 
 function myFunc() {
   myFuncNoVarKeyword = "myFuncNoVarKeyword";
@@ -35,4 +43,20 @@ function myFunction() {
   console.log(myFunctionVar);
 }
 myFunction(); // myFunctionVar
-console.log(myFunctionVar); // ReferenceError: myFunctionVar is not defined
+try {
+  console.log(myFunctionVar);
+} catch (err) {
+  console.log(err); // ReferenceError: myFunctionVar is not defined
+}
+
+{
+  function aFunction() {
+    console.log("aFunction");
+  }
+}
+aFunction();
+try {
+  aFunction();
+} catch (err) {
+  console.log(err); // ReferenceError: aFunction is not defined
+}
