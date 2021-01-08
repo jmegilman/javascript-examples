@@ -4,7 +4,7 @@
   "description": "JavaScript principles and reference with code examples",
   "main": "src/index.html",
   "scripts": {
-    "test": "jest"
+    "test": "mocha src/**/*.spec.js --reporter spec"
   },
   "keywords": [
     "JavaScript",
@@ -13,6 +13,7 @@
   "author": "Jamie Gilman",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "mocha": "^8.2.1",
+    "wish": "^1.0.1"
   }
 }
